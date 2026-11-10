@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 This project uses the changelog in accordance with [keepchangelog](http://keepachangelog.com/). Please use this to write notable changes, which is not the same as git commit log...
 
 ## [unreleased][unreleased]
+- Changed `lf pcf7931 write` - write is verified via the tag's read after write, retried up to 3 times, failures are reported (@GiacoBot)
 - Fixed `lf pcf7931 write` - device froze on the 16-bit timer wrap, client always timed out, write right after a read failed; default init delay is now 17450 us (@GiacoBot)
 - Changed `lf pcf7931 reader` - prints blocks 0-7 in order and decodes PAC, password, write protection and selection; handles partial selections, new `--rfb` param (@GiacoBot)
 - Fixed `lf pcf7931 reader` - every read ran all 12 captures, no reply without a tag, field left on, block lost after a 16T0 PMC (@GiacoBot)
